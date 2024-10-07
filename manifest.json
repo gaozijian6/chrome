@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Remove Max Width",
+    "version": "1.0",
+    "description": "移除Claude的max-width限制",
+    "icons": {
+      "16": "img/cry.png",
+      "48": "img/cry.png",
+      "128": "img/cry.png"
+    },
+    "permissions": [
+      "activeTab",
+      "*://*/*",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://claude.ai/*"],
+        "js": ["content.js"]
+      }
+  ],
+  "commands": {
+    "switch-tab-left": {
+      "suggested_key": {
+        "default": "Alt+Z"
+      },
+      "description": "切换到左侧标签页"
+    },
+    "switch-tab-right": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "切换到右侧标签页"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
