@@ -11,12 +11,17 @@
     "permissions": [
       "activeTab",
       "*://*/*",
-      "tabs"
+      "tabs",
+      "debugger"
     ],
     "content_scripts": [
       {
         "matches": ["https://claude.ai/*"],
         "js": ["content.js"]
+      },
+      {
+        "matches":["https://blog.csdn.net/*"],
+        "js":["csdn.js"]
       }
   ],
   "commands": {
@@ -31,6 +36,12 @@
         "default": "Alt+X"
       },
       "description": "切换到右侧标签页"
+    },
+    "open-console": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z"
+      },
+      "description": "打开开发者工具控制台"
     }
   },
   "background": {
