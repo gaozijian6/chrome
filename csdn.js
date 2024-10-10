@@ -7,4 +7,6 @@ window.addEventListener("load", () => {
     blogContentBox.style.setProperty('left', '-360px', 'important');
     blogContentBox.style.setProperty('width', '95vw', 'important');
 
+    const csdnSideToolbar = document.querySelector('.csdn-side-toolbar');
+    csdnSideToolbar?.style.setProperty('display', 'none', 'important');
 });
